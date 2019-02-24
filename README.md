@@ -62,3 +62,26 @@ mysql -u root -p
 ```
 
 But cannot access by Sequel Pro because default authentication plugin was changed from `mysql_native_password` to `caching_sha2_password`.Therefor I will use the mysql command.
+
+#### Exception handling
+
+`rescue_from` is one of methods that catchs exceptions occured in a controller.
+If exceptions are common, it will be used in `ApplicationController`.
+
+```rb
+class ApplicationController < ActionController::API
+  rescue_from ActiveRecord::ActiveRecordError, with: :render_500
+
+  def render_500
+    ...
+  end
+end
+```
+
+I wanted to clarify these roles, so I cut it out into a module.
+
+```rb
+class ApplicationController < ActionController::API
+  include ErrorHandling
+end
+```
