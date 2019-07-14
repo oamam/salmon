@@ -34,7 +34,7 @@ Initialize mariadb settings are all default.
 
 Create a database for devlopment and a user using the sequel pro.
 
-But I abondon to use mariadb installed by homebrew because it can not use CURRENT_TIMESTAMP.
+But I abandon to use mariadb installed by homebrew because it can not use CURRENT_TIMESTAMP.
 
 Mariadb uninstall
 
